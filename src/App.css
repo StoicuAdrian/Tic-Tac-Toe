@@ -1,0 +1,18 @@
+body{
+    background-color: white;
+}
+
+.App {
+ text-align: center;
+}
+
+.Draw {
+    padding: 5rem;
+    font-size: 8em;
+    font-family: "Fredoka", sans-serif;
+    font-weight: bold;
+    line-height: 0.25rem;
+    margin: 0.5rem;
+}
+
+/* rgb(32, 31, 31) */
