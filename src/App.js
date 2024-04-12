@@ -34,13 +34,6 @@ function App() {
 
     const winner = checkWinner(updateBoard);
 
-    
-  if (winner) {
-    setWinner(winner);
-  } else if (updateBoard.every(box => box !== null)) {
-    setWinner("draw");
-  }
-
     if (winner) {
       if(winner === "O") {
         let {oScore} = scores;
@@ -60,10 +53,6 @@ function App() {
 
   const checkWinner = (board) => {
 
-    if (board.every(box => box !== null)) {
-      setGameOver(true);
-      return "draw";
-    }
 
     for ( let i = 0; i < Win_Condition.length; i++) {
       const [x, y, z] = Win_Condition[i];
@@ -80,26 +69,15 @@ function App() {
     setBoard(Array(9).fill(null))
   }
 
-  const DrawMessage = () => {
-    if (gameOver) {
-      if (winner === "draw") {
-        return "It's a draw!";
-      }
-    }
-  }
-
-  
-
-
 
   return (
     <div className="App">
       <ScoreBoard scores={scores} xPlayer={xPlayer}/>
       <Board board={board} onClick={gameOver ? resetBoard : handleBoxClick}/>
       <ResetButton resetBoard={resetBoard} />
-      <div className='Draw'>{DrawMessage()}</div>
     </div>
   );
 }
 
 export default App;
+
